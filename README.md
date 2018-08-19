@@ -1,6 +1,8 @@
 # BigOEstimator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
+Estimate the time complexity of your algorithms from experimental data.
+
+Each data point should comprise of two integers per line, separated by non-digit characters.
 
 ## Development server
 
