@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { DataInputComponent } from './data-input/data-input.component';
+import { bestFit } from './estimator/find-best';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'big-o-estimator';
+  title = 'Big O Estimator';
+
+  @ViewChild(DataInputComponent)
+  dataInput: DataInputComponent;
+
+  result: string = '';
+
+  estimate(): void {
+    const data = this.dataInput.getDataPoints();
+    this.result = bestFit(data).name;    
+  }
 }
